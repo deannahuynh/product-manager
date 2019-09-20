@@ -1,0 +1,14 @@
+<div id="products" style="width: 80%">
+    <h1>Products List</h1>
+    <div>
+        <div class="product" *ngFor="let product of products">
+            <img src="{{ product.imgUrl }}" alt="" style="width: 300px; height: 300px;" class="card">
+            <h3>{{ product.title }}</h3>
+            <h3>${{ product.price }}</h3>
+            <div class="actions">
+                <a class="btn btn-primary" [routerLink]="['edit', product._id ]">Edit</a> | 
+                <button type="button" class="btn btn-danger" (click)="deleteProduct(product._id)"> Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
